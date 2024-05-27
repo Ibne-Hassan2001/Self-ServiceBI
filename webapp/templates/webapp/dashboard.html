@@ -1,0 +1,119 @@
+<!-- Include custom JavaScript file -->
+
+
+{% extends 'webapp/base.html' %}
+
+
+{% block content %}
+
+    <h5> Welcome to the dashboard page, {{user}}! 👋 </h5>
+
+     <hr>
+
+    {% comment %} <a class="btn btn-outline-primary btn-sm" href="{% url 'create-record' %}">
+
+        Create a new record &nbsp; <i class="fa fa-plus-circle" aria-hidden="true"></i>
+
+    </a> {% endcomment %}
+
+    <a class="btn btn-outline-primary btn-sm btn-outline-custom" href="{% url 'create-record' %}">
+        Create a new record &nbsp; <i class="fa fa-plus-circle" aria-hidden="true"></i>
+    </a>
+    
+
+    <hr>  
+
+     <table class="table table-hover table-bordered">
+
+        <thead class="table-light">
+
+            <tr>
+                
+                <th scope="col">ID</th>
+                <th scope="col">Task ID</th>
+                <th scope="col">Use Cases</th>
+                <th scope="col">Start Time</th>
+                <th scope="col">End Time</th>
+                <th scope="col">Status</th>
+                {% comment %} <th scope="col">User</th> {% endcomment %}
+                <th scope="col">View</th>
+                <th scope="col">Action</th>
+
+
+                {% comment %} <th scope="col"> ID </th>
+                 <th scope="col">Task ID</th>
+                {% comment %} <th scope="col"> Full name </th>
+                <th scope="col"> Email </th>
+                <th scope="col"> Phone </th> {% endcomment %}
+                {% comment %} <th scope="col"> Use_Cases </th>
+                
+                <th scope="col"> Start Time </th>
+                {% comment %} <th scope="col"> End Time </th> {% endcomment %}
+
+                {% comment %} <th scope="col"> User </th>
+
+                <th scope="col"> View </th>
+                <th scope="col"> Action </th> {% endcomment %} 
+
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+        {% if records %}
+
+            {% for record in records %}
+
+            <tr>
+
+                <td> {{record.id}} </td>
+                <td> {{record.creation_date|date:"YmdHis"}} </td>
+                 
+                <td> {{record.use_cases}} </td>
+               
+                <td> {{record.creation_date}} </td>
+               
+                <td>
+                    {% if record.status == 'Email Sent' or record.status == 'File Generated' %}
+                        {{ record.end_time }}
+                    {% endif %}
+                </td>
+                
+                
+                <td> {{record.status}} </td>
+                {% comment %} <td> <a class="btn btn-primary btn-sm" href="{% url 'record' record.id %}"> Delete  </a> </td>
+                <td> <a class="btn btn-primary btn-sm" href="{% url 'send-mail' record.id %}">Send Mail <i class="fa fa-envelope" aria-hidden="true"></i></a></td>  {% endcomment %}
+                <td>
+                    <a class="btn btn-custom btn-sm" href="{% url 'record' record.id %}"> Delete </a>
+                </td>
+                <td>
+                    <a class="btn btn-custom btn-sm" href="{% url 'send-mail' record.id %}">
+                        Send Mail <i class="fa fa-envelope" aria-hidden="true"></i>
+                    </a>
+                </td>
+                
+                
+
+            </tr>
+
+            {% endfor %}
+        
+        {% endif %}
+
+
+        </tbody>
+
+
+    </table>
+
+
+   
+
+{% endblock %}
+
+{% block extra_head %}
+<!-- Add meta refresh tag for auto-refresh every 5 seconds -->
+<meta http-equiv="refresh" content="5">
+{% endblock %}
