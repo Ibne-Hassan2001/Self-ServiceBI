@@ -1,0 +1,96 @@
+
+.form-layout{
+
+  border-radius: 15px;
+  width: 500px;
+
+}
+/* Change the color of the buttons */
+.btn-custom {
+  background-color: #d62a64;
+  color: white; 
+  /* Add any other custom styles you want */
+}
+
+/* Apply hover effect */
+.btn-custom:hover {
+  background-color: #ad194c; /* Change to a slightly darker shade on hover */
+}
+
+/* Optionally, you can target the envelope icon inside the button */
+.btn-custom .fa-envelope {
+  color: white; /* Change the color of the envelope icon */
+}
+
+
+/* Change the color of the outline button */
+.btn-outline-custom {
+  color: white; /* Set font color to white */
+  border-color: #d62a64; /* Set border color to the primary color */
+}
+
+/* Apply hover effect */
+.btn-outline-custom:hover {
+  color: white; /* Set font color to white on hover */
+  background-color: #d62a64; /* Change background color to the primary color */
+  border-color: #d62a64; /* Change border color to the primary color on hover */
+}
+
+/* Optionally, you can target the plus-circle icon inside the button */
+.btn-outline-custom .fa-plus-circle {
+  color: white; /* Change the color of the plus-circle icon */
+}
+
+
+.message-text{
+
+  color: white;
+
+}
+
+.custom-navbar {
+background-color: #fff200 !important;
+color: black !important;
+}
+
+
+.bg-light {
+--bs-bg-opacity: 1;
+background-color: #250d49 !important;
+}
+
+
+.custom-navbar .navbar-nav .nav-link {
+color: black;
+/* Text color */
+}
+
+.custom-navbar .navbar-nav .nav-link:hover {
+color: #f6038d;
+/* Text color on hover */
+}
+.btn :hover {
+color: #f6038d !important;
+/* Text color on hover */
+}
+
+.footer {
+position: fixed;
+bottom: 0;
+width: 100%;
+background-color: #343a40;
+/* Adjust color if needed */
+color: white;
+/* Adjust text color if needed */
+padding: 20px 0;
+/* Adjust padding if needed */
+text-align: center;
+/* Center align text */
+}
+
+.navbar-brand img {
+display: block;
+margin: 0 auto;
+}
+
+
